@@ -10,7 +10,6 @@ const LoginComponent = ({ history }) => {
     const [recordar, setRecordar] = useState('false');
 
     const google = (e) => {
-        e.preventDefault();
 
         firebase.auth().signInWithPopup( googleAuthProvider )
             .then( ({ user }) => {
@@ -43,7 +42,7 @@ const LoginComponent = ({ history }) => {
                     </div>
 
 
-                    <button style={{ backgroundColor: '#009b78' }} type="submit" className="btn btn-block">Ingresar con cuenta Google</button>
+                    <button style={{ backgroundColor: '#009b78' }} type='button' onClick={ google } className="btn btn-block">Ingresar con cuenta Google</button>
                 </form>
             </div>
         </div>
